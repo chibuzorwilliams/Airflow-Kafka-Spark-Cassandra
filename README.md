@@ -34,7 +34,7 @@ Random User API → Airflow Producer → Kafka Topic → Spark Streaming → Cas
 
 ---
 
-## 🧠 Why This Architecture?
+## Why I Used This Architecture?
 
 This project demonstrates core distributed data engineering principles:
 
@@ -55,7 +55,7 @@ This decoupled architecture improves:
 
 ---
 
-## 🛠 Tech Stack
+## Tech Stack
 
 - Python 3.9+
 - Apache Spark 3.5.x
@@ -66,7 +66,7 @@ This decoupled architecture improves:
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```
 Airflow-Kafka-Spark-Cassandra/
@@ -85,7 +85,7 @@ Airflow-Kafka-Spark-Cassandra/
 
 ## ⚙️ Setup & Execution
 
-### 1️⃣ Start All Services
+### Start All Services
 
 ```bash
 docker compose up -d
@@ -102,7 +102,7 @@ This launches:
 
 ---
 
-### 2️⃣ Trigger Airflow DAG
+### Trigger Airflow DAG
 
 - Open Airflow UI
 - Enable the DAG
@@ -114,7 +114,7 @@ The DAG:
 
 ---
 
-### 3️⃣ Start Spark Streaming Job
+### Start Spark Streaming Job
 
 ```bash
 spark-submit   --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.5.0   spark_stream.py
@@ -130,7 +130,7 @@ Spark will:
 
 ---
 
-### 4️⃣ Verify Data in Cassandra
+### Verify Data in Cassandra
 
 ```bash
 docker exec -it cassandra cqlsh
@@ -142,35 +142,7 @@ SELECT * FROM spark_streams.created_users;
 
 ---
 
-## 🧪 What This Project Demonstrates
-
-- Real-time event ingestion
-- Kafka topic configuration and streaming
-- Spark Structured Streaming (micro-batch processing)
-- Cassandra table design for streaming workloads
-- Multi-container orchestration with Docker
-- Debugging distributed service connectivity
-
----
-
-## ⚠ Engineering Tradeoffs & Notes
-
-This is a local simulation of a distributed architecture.
-
-In production, improvements would include:
-
-- Dedicated long-running producer service (not Airflow loop)
-- Schema enforcement via Schema Registry (Avro/Protobuf), not just raw JSON
-- Stronger typing (e.g., consistent UUID handling end-to-end)
-- Monitoring via Prometheus/Grafana
-- Infrastructure-as-Code deployment (Terraform/K8s)
-- Partition + throughput tuning for Kafka and Spark
-
-Airflow is used here to **orchestrate** a demo ingestion workflow. In a production streaming system, ingestion services typically run independently of schedulers.
-
----
-
-## 🐛 Common Issues Encountered
+## Common Issues Encountered
 
 <<<<<<< HEAD
 - Configured Kafka dual-listener setup (`PLAINTEXT` for internal Docker networking, `PLAINTEXT_HOST` for host access) to support both intra-container and host-machine connectivity
@@ -185,22 +157,11 @@ Airflow is used here to **orchestrate** a demo ingestion workflow. In a producti
 
 ---
 
-## 📈 Future Improvements
-
-- Add Spark checkpointing for fault tolerance
-- Introduce watermarking & windowed aggregations
-- Add structured logging
-- Implement exactly-once write semantics (where applicable)
-- Deploy via Kubernetes
-
----
-
-## 🎯 Learning Outcome
+## Learning Outcome
 
 This project reinforced:
 
 - Distributed systems fundamentals  
 - Streaming vs batch processing differences  
-- Decoupled microservice-style architectures  
+- Decoupled microservice style architectures  
 - Operational debugging across containerized services  
->>>>>>> 4b8cf0a (Updated README)
