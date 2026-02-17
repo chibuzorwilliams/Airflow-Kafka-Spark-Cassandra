@@ -18,7 +18,6 @@ The pipeline simulates a production-style streaming architecture by ingesting li
 ---
 
 ## System Architecture
->>>>>>> 4b8cf0a (Updated README)
 
 ![System Architecture](system_architecture.png)
 
