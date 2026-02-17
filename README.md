@@ -83,7 +83,7 @@ Airflow-Kafka-Spark-Cassandra/
 
 ---
 
-## ⚙️ Setup & Execution
+## Setup & Execution
 
 ### Start All Services
 
@@ -144,7 +144,6 @@ SELECT * FROM spark_streams.created_users;
 
 ## Common Issues Encountered
 
-<<<<<<< HEAD
 - Configured Kafka dual-listener setup (`PLAINTEXT` for internal Docker networking, `PLAINTEXT_HOST` for host access) to support both intra-container and host-machine connectivity
 - Resolved Python 3.12+ incompatibility with `cassandra-driver` by running Spark jobs inside the container (Python 3.8 environment)
 - Managed Spark permission issues on the `apache/spark` image by running `spark-submit` and `pip install` as root
