@@ -154,9 +154,3 @@ docker compose down --remove-orphans
 - Resolved Python 3.12+ incompatibility with `cassandra-driver` by running Spark jobs inside the container (Python 3.8 environment)
 - Managed Spark permission issues on the `apache/spark` image by running `spark-submit` and `pip install` as root
 - Debugged a `NullKeyColumnException` caused by missing UUID generation in the Kafka producer, which Cassandra requires as a primary key
-
----
-
-## License
-
-MIT
