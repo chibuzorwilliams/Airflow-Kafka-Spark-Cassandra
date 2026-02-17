@@ -1,6 +1,6 @@
 # Real-Time Data Streaming Pipeline
 
-A end-to-end real-time data engineering pipeline that ingests user data from a public API, streams it through Apache Kafka, processes it with Apache Spark, and persists it in Apache Cassandra — all orchestrated with Apache Airflow and containerised with Docker.
+An end-to-end real-time data engineering pipeline that ingests user data from a public API, streams it through Apache Kafka, processes it with Apache Spark, and persists it in Apache Cassandra, all orchestrated with Apache Airflow and containerised with Docker.
 
 ![System Architecture](system_architecture.png)
 
